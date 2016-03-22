@@ -20,7 +20,7 @@ namespace Controller
             comando.Parameters.AddWithValue("@remetente", mensagem.Remetente.IDUsuario);
             comando.Parameters.AddWithValue("@destinatario", mensagem.Destinatario.IDUsuario);
             comando.Parameters.AddWithValue("@assunto", mensagem.Assunto);
-            comando.Parameters.AddWithValue("@mensagem", mensagem.Mensagem);
+            comando.Parameters.AddWithValue("@mensagem", mensagem.Conteudo);
 
             conexao.Open();
 
@@ -53,7 +53,7 @@ namespace Controller
                     mensagem.Remetente = controle.LocalizarUsuarioPorID (reader.GetInt32(1));
                     mensagem.Destinatario = controle.LocalizarUsuarioPorID(reader.GetInt32(2));
                     mensagem.Assunto = reader.GetString(3);
-                    mensagem.Mensagem = reader.GetString(4);
+                    mensagem.Conteudo = reader.GetString(4);
 
                     listaMensagens.Add(mensagem);
                 }
