@@ -64,7 +64,6 @@ namespace GUIControleMensagens
             Usuario usuario = new Usuario();
             usuario.Nome = textBox1.Text;
             usuario.Email = textBox2.Text;
-            usuario.IDUsuario = Convert.ToInt32(textBox3.Text);
 
             if (controle.GravarUsuario(usuario))
             {

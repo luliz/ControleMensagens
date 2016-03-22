@@ -24,7 +24,7 @@ namespace Controller
                 comando.CommandText = "update tbl_usuario set nome=@nome,email=@email where id_usuario=@idusuario";
                 comando.Parameters.AddWithValue("@nome", usuario.Nome);
                 comando.Parameters.AddWithValue("@email", usuario.Email);
-                comando.Parameters.AddWithValue("@id_usuario", usuario.IDUsuario);
+                comando.Parameters.AddWithValue("@idusuario", usuario.IDUsuario);
             }
             conexao.Open();
             int linhasModificadas = comando.ExecuteNonQuery();
@@ -75,22 +75,23 @@ namespace Controller
 
         public Usuario LocalizarUsuarioPorID(int idUsuario)
         {
-            SqlConnection conexao = ADODBConnection.Connection();
-            SqlCommand comando = conexao.CreateCommand();
-            comando.CommandText = "select * from tbl_usuario where id_usuario=@idusuario";
-            comando.Parameters.AddWithValue("@idproduto", idUsuario);
+            SqlConnection conexo = ADODBConnection.Connection();
+            SqlCommand comand = conexo.CreateCommand();
+            comand.CommandText = "select * from tbl_usuario where id_usuario=@idusuario";
+            comand.Parameters.AddWithValue("@idusuario", idUsuario);
+            conexo.Open();
             Usuario usuario = null;
-            conexao.Open();
-            using (SqlDataReader reader = comando.ExecuteReader())
+            using (SqlDataReader read = comand.ExecuteReader())
             {
-                if (reader.Read())
+                if (read.Read())
                 {
                     usuario = new Usuario();
-                    usuario.IDUsuario = reader.GetInt32(0);
-                    usuario.Nome = reader.GetString(1);
-                    usuario.Email = reader.GetString(2);
+                    usuario.IDUsuario = read.GetInt32(0);
+                    usuario.Nome = read.GetString(1);
+                    usuario.Email = read.GetString(2);
                 }
-                conexao.Close();
+
+                conexo.Close();
                 return usuario;
             }
         }

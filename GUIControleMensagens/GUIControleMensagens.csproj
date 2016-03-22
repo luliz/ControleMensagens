@@ -50,6 +50,12 @@
     <Compile Include="FormEnvioMensagem.Designer.cs">
       <DependentUpon>FormEnvioMensagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLeituraMensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLeituraMensagem.Designer.cs">
+      <DependentUpon>FormLeituraMensagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormEnvioMensagem.resx">
       <DependentUpon>FormEnvioMensagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLeituraMensagem.resx">
+      <DependentUpon>FormLeituraMensagem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

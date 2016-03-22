@@ -28,11 +28,13 @@ namespace GUIControleMensagens
         public FormEnvioMensagem()
         {
             InitializeComponent();
+            controleMensagem = new ControllerMensagem();
+            controleUsuario = new ControllerUsuario();
         }
 
         private void novo()
         {
-
+            mensagemAtual = new Mensagem();
             textBoxRemetente.Text = "";
             textBoxDestinatario.Text = "";
             textBoxAssunto.Text = "";
@@ -48,12 +50,13 @@ namespace GUIControleMensagens
             listaNomeUsuarios = new AutoCompleteStringCollection();
             foreach (Usuario remetente in listaUsuarios)
             {
+                
                 listaNomeUsuarios.Add(remetente.Nome);
             }
             textBoxRemetente.AutoCompleteCustomSource = listaNomeUsuarios;
 
-            textBoxRemetente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBoxRemetente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxDestinatario.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBoxDestinatario.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
             textBoxDestinatario.AutoCompleteCustomSource = listaNomeUsuarios;
 

@@ -53,10 +53,11 @@
             // textBoxRemetente
             // 
             this.textBoxRemetente.Location = new System.Drawing.Point(82, 20);
-            this.textBoxRemetente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxRemetente.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxRemetente.Name = "textBoxRemetente";
             this.textBoxRemetente.Size = new System.Drawing.Size(306, 20);
             this.textBoxRemetente.TabIndex = 1;
+            this.textBoxRemetente.TextChanged += new System.EventHandler(this.textBoxRemetente_TextChanged);
             // 
             // label2
             // 
@@ -71,10 +72,11 @@
             // textBoxDestinatario
             // 
             this.textBoxDestinatario.Location = new System.Drawing.Point(82, 50);
-            this.textBoxDestinatario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDestinatario.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDestinatario.Name = "textBoxDestinatario";
             this.textBoxDestinatario.Size = new System.Drawing.Size(306, 20);
             this.textBoxDestinatario.TabIndex = 3;
+            this.textBoxDestinatario.TextChanged += new System.EventHandler(this.textBoxDestinatario_TextChanged);
             // 
             // label3
             // 
@@ -89,7 +91,7 @@
             // textBoxAssunto
             // 
             this.textBoxAssunto.Location = new System.Drawing.Point(82, 76);
-            this.textBoxAssunto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAssunto.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAssunto.Name = "textBoxAssunto";
             this.textBoxAssunto.Size = new System.Drawing.Size(306, 20);
             this.textBoxAssunto.TabIndex = 5;
@@ -107,7 +109,7 @@
             // richTextBoxMensagem
             // 
             this.richTextBoxMensagem.Location = new System.Drawing.Point(82, 109);
-            this.richTextBoxMensagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxMensagem.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxMensagem.Name = "richTextBoxMensagem";
             this.richTextBoxMensagem.Size = new System.Drawing.Size(306, 119);
             this.richTextBoxMensagem.TabIndex = 7;
@@ -116,7 +118,7 @@
             // buttonNovaMensagem
             // 
             this.buttonNovaMensagem.Location = new System.Drawing.Point(16, 232);
-            this.buttonNovaMensagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNovaMensagem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNovaMensagem.Name = "buttonNovaMensagem";
             this.buttonNovaMensagem.Size = new System.Drawing.Size(118, 36);
             this.buttonNovaMensagem.TabIndex = 8;
@@ -127,7 +129,7 @@
             // buttonEnviarMensagem
             // 
             this.buttonEnviarMensagem.Location = new System.Drawing.Point(139, 232);
-            this.buttonEnviarMensagem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEnviarMensagem.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEnviarMensagem.Name = "buttonEnviarMensagem";
             this.buttonEnviarMensagem.Size = new System.Drawing.Size(118, 36);
             this.buttonEnviarMensagem.TabIndex = 9;
@@ -150,10 +152,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxRemetente);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEnvioMensagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Envio de Mensagens";
+            this.Load += new System.EventHandler(this.FormEnvioMensagem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
