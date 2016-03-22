@@ -95,8 +95,8 @@
             this.ClientSize = new System.Drawing.Size(483, 250);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
+		this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+this.MaximizeBox = false;
             this.Name = "FormPrincipal";
             this.Text = "Controle de Mensagens";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

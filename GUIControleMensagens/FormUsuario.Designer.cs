@@ -70,8 +70,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 96);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(296, 123);
+            this.dataGridView1.Size = new System.Drawing.Size(370, 123);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // textBox2
             // 
@@ -86,6 +87,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 20);
             this.textBox3.TabIndex = 5;
+            this.textBox3.Visible = false;
             // 
             // button3
             // 
@@ -95,12 +97,13 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Novo";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 230);
+            this.ClientSize = new System.Drawing.Size(395, 230);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
@@ -110,6 +113,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "FormUsuario";
             this.Text = "FormUsuario";
+            this.Load += new System.EventHandler(this.FormUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
