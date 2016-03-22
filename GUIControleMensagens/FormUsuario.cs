@@ -36,28 +36,12 @@ namespace GUIControleMensagens
             dataGridView1.Columns[0].Visible = false;
         }
 
-        private void FormCliente_Load(object sender, EventArgs e)
+        private void FormUsuario_Load(object sender, EventArgs e)
         {
             atualizaGrid();
             novo();
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dataGridView1.CurrentRow != null)
-            {
-                List<Usuario> lista = (List<Usuario>)dataGridView1.DataSource;
-                Usuario cliente = lista[dataGridView1.CurrentRow.Index];
-                textBox1.Text = cliente.Nome;
-                textBox2.Text = cliente.Email;
-                textBox3.Text = cliente.IDUsuario.ToString();
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            novo();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -65,6 +49,7 @@ namespace GUIControleMensagens
             usuario.Nome = textBox1.Text;
             usuario.Email = textBox2.Text;
             usuario.IDUsuario = Convert.ToInt32(textBox3.Text);
+
 
             if (controle.GravarUsuario(usuario))
             {
@@ -99,5 +84,25 @@ namespace GUIControleMensagens
                 MessageBox.Show("Selecione um Usuario para exclusão");
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            novo();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                List<Usuario> lista = (List<Usuario>)dataGridView1.DataSource;
+                Usuario usuario = lista[dataGridView1.CurrentRow.Index];
+                textBox1.Text = usuario.Nome;
+                textBox2.Text = usuario.Email;
+                textBox3.Text = usuario.IDUsuario.ToString();
+            }
+        }
+
+       
     }
 }
+
