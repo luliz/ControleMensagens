@@ -12,9 +12,9 @@ namespace GUIControleMensagens
 {
     public partial class FormPrincipal : Form
     {
+        private FormLeituraMensagem formLeituraMensagem;
         private FormEnvioMensagem formEnvioMensagem;
-
-	private FormUsuario formusuario;
+	    private FormUsuario formUsuario;
 	public FormPrincipal()
         {
             InitializeComponent();
