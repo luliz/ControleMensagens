@@ -73,5 +73,26 @@ namespace Controller
             }
         }
 
+        public Usuario LocalizarUsuarioPorID(int idUsuario)
+        {
+            SqlConnection conexao = ADODBConnection.Connection();
+            SqlCommand comando = conexao.CreateCommand();
+            comando.CommandText = "select * from tbl_usuario where id_usuario=@idusuario";
+            comando.Parameters.AddWithValue("@idproduto", idUsuario);
+            Usuario usuario = null;
+            conexao.Open();
+            using (SqlDataReader reader = comando.ExecuteReader())
+            {
+                if (reader.Read())
+                {
+                    usuario = new Usuario();
+                    usuario.IDUsuario = reader.GetInt32(0);
+                    usuario.Nome = reader.GetString(1);
+                    usuario.Email = reader.GetString(2);
+                }
+                conexao.Close();
+                return usuario;
+            }
+        }
     }
 }
